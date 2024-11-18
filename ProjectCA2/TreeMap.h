@@ -20,6 +20,7 @@ public:
 	V& operator[](K key);
 
 
+
 	//~TreeMap();
 
 };
@@ -75,6 +76,8 @@ inline BinaryTree<K> TreeMap<K, V>::keySet()
 {
 	return BinaryTree<K>();
 }
+
+
 
 template<class K, class V>
 inline bool TreeMap<K, V>::removeKey(K key)
