@@ -7,6 +7,7 @@
 template <class K, class V>
 class TreeMap {
 	BinaryTree<TreeMapNode<K, V>> tree;
+	void addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K>& keys);
 
 public:
 	//TreeMap();  constructor
@@ -24,6 +25,23 @@ public:
 	//~TreeMap();
 
 };
+
+template<class K, class V>
+inline void TreeMap<K, V>::addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K>& keys)
+{
+	/*if (left child)
+	* run addKey(child)
+	* add to tree
+	* if(right child)
+	* run addKey(child)
+	*/
+
+	if (node->getLeft() != nullpt)
+		addKey(node->getLeft(), key);
+	keys.add(node.getItem);
+	if (node->getRight() != nullptr)
+		addKey(node->getRight(), key);
+}
 
 template <class K, class V>
 void TreeMap<K, V>::clear()
@@ -74,7 +92,11 @@ inline V& TreeMap<K, V>::get(K key)
 template<class K, class V>
 inline BinaryTree<K> TreeMap<K, V>::keySet()
 {
-	return BinaryTree<K>();
+	BinaryTree<K> keys;
+
+	addKey(tree.root, keys);
+
+	return keys;
 }
 
 
