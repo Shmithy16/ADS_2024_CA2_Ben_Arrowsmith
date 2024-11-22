@@ -36,11 +36,11 @@ inline void TreeMap<K, V>::addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K
 	* run addKey(child)
 	*/
 
-	if (node->getLeft() != nullpt)
-		addKey(node->getLeft(), key);
-	keys.add(node.getItem);
+	if (node->getLeft() != nullptr)
+		addKey(node->getLeft(), keys);
+	keys.add(node.getItem());
 	if (node->getRight() != nullptr)
-		addKey(node->getRight(), key);
+		addKey(node->getRight(), keys);
 }
 
 template <class K, class V>
