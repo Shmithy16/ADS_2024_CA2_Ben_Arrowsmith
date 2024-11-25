@@ -11,6 +11,7 @@ public:
 	BinaryTree();
 	BinaryTree(const BinaryTree<T> &other);
 	BinaryTree<T> operator=(const BinaryTree<T>& other);
+	bool operator==(const BinaryTree<T>& other);
 	void add(T& item);
 	bool remove(T& item);
 	void clear();
@@ -51,6 +52,15 @@ BinaryTree<T> BinaryTree<T>::operator=(const BinaryTree<T>& other)
 		root = nullptr;
 	return *this;
 
+}
+
+template<class T>
+bool BinaryTree<T>::operator==(const BinaryTree<T>& other)
+{
+	if (this == &other)
+		return true;
+	else
+		return false;
 }
 
 template <class T>

@@ -105,7 +105,7 @@ template<class K, class V>
 inline bool TreeMap<K, V>::removeKey(K key)
 {
 	TreeMapNode<K, V> itemRemove(key);
-	return tree.remove(itemRemove).value;
+	return tree.remove(itemRemove);
 }
 
 template<class K, class V>

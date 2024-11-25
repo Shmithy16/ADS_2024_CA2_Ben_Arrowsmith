@@ -14,6 +14,8 @@ int main() {
 	test.put("a", 2);
 	test.put("b", 3);
 
+	test.removeKey("a");
+
 	cout << test["b"] << endl;
 
 	return 0;
