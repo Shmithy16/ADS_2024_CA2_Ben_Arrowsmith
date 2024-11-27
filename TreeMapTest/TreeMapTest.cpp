@@ -15,8 +15,12 @@ namespace TreeMapTest
 		TEST_METHOD(TestPutAndGet)
 		{
 			TreeMap<int, int> tree;
-			tree.put(1, 2);
-			Assert::AreEqual(tree.get(1), 2);
+			tree.put(2, 6);
+			tree.put(3, 7);
+			tree.put(4, 1);
+			Assert::AreEqual(tree.get(2), 6);
+			Assert::AreEqual(tree.get(3), 7);
+			Assert::AreEqual(tree.get(4), 1);
 		}
 
 		TEST_METHOD(TestSizeOnEmpty)
@@ -99,7 +103,8 @@ namespace TreeMapTest
 			tree.put(2, 6);
 			tree.put(3, 7);
 			tree.put(4, 1);
-			Assert::AreEqual(tree.keySet(), bTree);
+			BinaryTree<int> bTreeKeyset = tree.keySet();
+			Assert::AreEqual(bTree.get(val), bTreeKeyset.get(val));
 		}
 	};
 

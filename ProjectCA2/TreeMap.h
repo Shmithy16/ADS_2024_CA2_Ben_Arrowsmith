@@ -38,7 +38,7 @@ inline void TreeMap<K, V>::addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K
 
 	if (node->getLeft() != nullptr)
 		addKey(node->getLeft(), keys);
-	keys.add(node.getItem());
+	keys.add(node->getItem().key);
 	if (node->getRight() != nullptr)
 		addKey(node->getRight(), keys);
 }

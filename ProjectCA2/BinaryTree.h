@@ -11,7 +11,7 @@ public:
 	BinaryTree();
 	BinaryTree(const BinaryTree<T> &other);
 	BinaryTree<T> operator=(const BinaryTree<T>& other);
-	bool operator==(const BinaryTree<T>& other);
+	//bool operator==(const BinaryTree<T>& other);
 	void add(T& item);
 	bool remove(T& item);
 	void clear();
@@ -54,14 +54,14 @@ BinaryTree<T> BinaryTree<T>::operator=(const BinaryTree<T>& other)
 
 }
 
-template<class T>
-bool BinaryTree<T>::operator==(const BinaryTree<T>& other)
-{
-	if (this == &other)
-		return true;
-	else
-		return false;
-}
+//template<class T>
+//bool BinaryTree<T>::operator==(const BinaryTree<T>& other)
+//{
+//	if (this == &other)
+//		return true;
+//	else
+//		return false;
+//}
 
 template <class T>
 void BinaryTree<T>::add(T& item)
@@ -176,7 +176,7 @@ T& BinaryTree<T>::get(T& item)
 		else
 			current = current->getRight();
 	}
-	throw logic_error("ITem not found");
+	throw logic_error("Item not found");
 }
 template <class T>
 void BinaryTree<T>::addItemToArray(BSTNode<T>* node, int &pos, T *arr)
