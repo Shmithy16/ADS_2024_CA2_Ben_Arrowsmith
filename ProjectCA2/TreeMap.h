@@ -15,16 +15,24 @@ public:
 	bool containsKey(K key);
 	void put(K key, V value);
 	int size();
+	void display();
 	V& get(K key);
 	BinaryTree<K> keySet();
 	bool removeKey(K key);
 	V& operator[](K key);
+	
 
 
 
 	//~TreeMap();
 
 };
+
+template<class K,class V>
+void TreeMap<K, V>::display()
+{
+	tree.printInOrder();
+}
 
 template<class K, class V>
 inline void TreeMap<K, V>::addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K>& keys)

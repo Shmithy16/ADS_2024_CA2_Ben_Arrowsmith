@@ -34,4 +34,9 @@ struct TreeMapNode {
 		return this->key == other.key;
 	}
 
+	friend std::ostream& operator<<(std::ostream& out, TreeMapNode& other)
+	{
+		return out << other.key;
+	}
+
 };
