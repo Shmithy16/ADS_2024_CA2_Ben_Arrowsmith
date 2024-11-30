@@ -25,8 +25,15 @@ public:
 	void printPostOrder();
 	void printPostOrder(BSTNode<T> *node);
 	T* toArray();
+	friend std::ostream& operator<<(std::ostream& out, BinaryTree& other)
+	{
+		return out << *other.root;
+
+	}
+
 	~BinaryTree();
 };
+
 
 template <class T>
 BinaryTree<T>::BinaryTree()

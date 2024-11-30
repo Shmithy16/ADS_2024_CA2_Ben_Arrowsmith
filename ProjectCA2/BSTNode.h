@@ -25,6 +25,19 @@ public:
 	void setLeft(BSTNode<T> *l);
 	void setRight(BSTNode<T> *r);
 	T& getItem();
+	friend std::ostream& operator<<(std::ostream& out, BSTNode& other)
+	{
+		if (other.getLeft() != nullptr)
+		{
+			out << *other.getLeft();
+		}
+		out << other.getItem() << " ";
+		if (other.getRight() != nullptr)
+		{
+			out << *other.getRight();
+		}
+		return out;
+	}
 	~BSTNode();
 
 };

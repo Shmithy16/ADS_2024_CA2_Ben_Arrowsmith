@@ -25,32 +25,36 @@ int main() {
 	if (fin)
 	{
 		string text = "";
-		BinaryTree<string> tree;
 		while (!fin.eof())
 		{
 			getline(fin, text, ' ');
 			stringstream  nextLine(text);
 			string word = "";
-			while (getline(nextLine, word, '\n')) {
-				tree.add(word);
-				if (part2.containsKey(word[0]))
+			while (getline(nextLine, word, '\n')) {	
+				if (!part2.containsKey(word[0]))
 				{
-					part2.get(word[0]).add(word);
+					BinaryTree<string> tree;
+					tree.add(word);
+					part2.put(word[0],tree);
 				}
 				else
 				{
-					part2.put(word[0], tree);
+					part2.get(word[0]).add(word);
 				}
 				
 			}
 		}
-		part2.display();
-		part2.get('a');
+		cout << part2 << endl;
 		fin.close();
 	}
 	else
 	{
 		cout << "Error opening file" << endl;
 	}
+
+	string m;
+	cout << "Input Letter: " << endl;
+	cin >> m;
+	cout << part2.get(m[0]) << endl;
 	return 0;
 }

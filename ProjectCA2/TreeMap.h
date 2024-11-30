@@ -6,11 +6,11 @@
 
 template <class K, class V>
 class TreeMap {
-	BinaryTree<TreeMapNode<K, V>> tree;
 	void addKey(BSTNode<TreeMapNode<K, V>>* node, BinaryTree<K>& keys);
 
 public:
 	//TreeMap();  constructor
+	BinaryTree<TreeMapNode<K, V>> tree;
 	void clear();
 	bool containsKey(K key);
 	void put(K key, V value);
@@ -20,6 +20,10 @@ public:
 	BinaryTree<K> keySet();
 	bool removeKey(K key);
 	V& operator[](K key);
+	friend std::ostream& operator<<(std::ostream& out, TreeMap& other)
+	{
+		return out << other.tree;
+	}
 	
 
 
